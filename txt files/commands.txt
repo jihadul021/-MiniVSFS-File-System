@@ -1,0 +1,20 @@
+##compile
+gcc -O2 -std=c17 -Wall -Wextra mkfs_builder.c -o mkfs_builder
+gcc -O2 -std=c17 -Wall -Wextra mkfs_adder.c -o mkfs_adder
+
+##build (fs.img file will be created)
+./mkfs_builder --image fs.img --size-kib 512 --inodes 256
+
+
+##check the empty fs.img disk
+hexdump -C fs.img | head -20
+
+##add files
+./mkfs_adder --input fs.img --output fs1.img --file file_2.txt
+./mkfs_adder --input fs1.img --output fs2.img --file file_18.txt
+./mkfs_adder --input fs2.img --output fs3.img --file file_29.txt
+./mkfs_adder --input fs3.img --output final_output.img --file file_31.txt
+
+##check added files
+hexdump -C final_output.img
+
