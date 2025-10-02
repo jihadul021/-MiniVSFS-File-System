@@ -55,7 +55,10 @@ You can add files to the filesystem image step by step:
 ---
 
 ### 5️⃣ Verify Added Files
+Use this command to check the final image and confirm that files were added successfully:
 ```
 hexdump -C final_output.img
 ```
-Use this command to check the final image and confirm that files were added successfully:
+### Sample Output snapshot
+<img width="770" height="860" alt="Screenshot from 2025-10-03 02-11-07" src="https://github.com/user-attachments/assets/14861ccd-a6aa-44fe-8698-e17109168ae8" />
+
